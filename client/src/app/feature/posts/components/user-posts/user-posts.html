@@ -1,0 +1,15 @@
+<section class="container">
+  <h2 class="container-heading">
+    <h2>{{ currentUser().username }}'s posts</h2>
+  </h2>
+  <div class="posts-container">
+    @for (post of userPosts(); track $index) {
+      <app-post-item
+        [post]="post"
+        [currentUser]="currentUser()"
+        [canEdit]="true"
+        (postActionOutput)="onPostAction($event)"
+      />
+    }
+  </div>
+</section>

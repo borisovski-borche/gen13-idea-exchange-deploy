@@ -1,0 +1,16 @@
+<section class="container">
+  <div class="container-heading">
+    <h2>Post Details</h2>
+  </div>
+  <div class="posts-container">
+    @if (postDetails()) {
+      <app-post-item
+        [post]="postDetails()"
+        [currentUser]="currentUser()"
+        (likeDislikeOutput)="onLikeDislikePost($event)"
+      />
+      <app-comment-form (submitOutput)="onCommentSubmit($event)" />
+      <app-comments-list [comments]="postDetails().comments" />
+    }
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="container">
+  <div class="container-heading">
+    <h2>Posts</h2>
+  </div>
+  <div class="posts-container">
+    <ul>
+      @for (post of posts(); track post._id) {
+        <app-post-item
+          [post]="post"
+          [currentUser]="currentUser()"
+          (likeDislikeOutput)="onLikeDislike($event)"
+        />
+      }
+    </ul>
+  </div>
+</section>

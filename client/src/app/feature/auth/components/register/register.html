@@ -1,0 +1,68 @@
+@let ctrls = registerForm.controls;
+
+<section class="container">
+  <div class="container-heading">
+    <h2>Register</h2>
+  </div>
+  <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+    <div class="form-group">
+      <label for="register-username">Username</label>
+      <input formControlName="username" type="text" class="form-control" id="register-username" />
+    </div>
+    @if (ctrls.username.touched) {
+      @if (ctrls.username.errors?.required) {
+        <p class="form-error">Username is required</p>
+      }
+      @if (ctrls.username.errors?.minlength || ctrls.username.errors?.maxlength) {
+        <p class="form-error">Username must be between 6-20 characters</p>
+      }
+    }
+    <div class="form-group">
+      <label for="register-email">Email</label>
+      <input formControlName="email" type="text" class="form-control" id="register-email" />
+    </div>
+    @if (ctrls.email.touched) {
+      @if (ctrls.email.errors?.required) {
+        <p class="form-error">Email is required</p>
+      }
+      @if (ctrls.email.errors?.email) {
+        <p class="form-error">Please enter a valid email</p>
+      }
+    }
+    <div class="form-group">
+      <label for="register-password">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="register-password"
+      />
+    </div>
+    @if (ctrls.password.touched) {
+      @if (ctrls.password.errors?.required) {
+        <p class="form-error">Password is required</p>
+      }
+      @if (ctrls.password.errors?.minlength || ctrls.password.errors?.maxlength) {
+        <p class="form-error">Password must be bettwen 8-30 characters</p>
+      }
+    }
+    <div class="form-group">
+      <label for="register-confirm-password">Confirm Password</label>
+      <input
+        formControlName="confirmPassword"
+        type="password"
+        class="form-control"
+        id="register-confirm-password"
+      />
+    </div>
+    @if (ctrls.confirmPassword.touched) {
+      @if (ctrls.confirmPassword.errors?.required) {
+        <p class="form-error">Confirm Password is required</p>
+      }
+      @if (ctrls.confirmPassword.errors?.passwordMismatch) {
+        <p class="form-error">Passwords must match</p>
+      }
+    }
+    <button type="submit">Register</button>
+  </form>
+</section>
