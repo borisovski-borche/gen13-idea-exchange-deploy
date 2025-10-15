@@ -49,8 +49,6 @@ export class PostForm {
 
     if (this.postForm.invalid) return;
 
-    console.log('form submitted with value: ', this.postForm.value);
-
     if (this.editPostData()) {
       this.postsService.updatePost(this.editPostData()._id, {
         title: this.postForm.value.title,

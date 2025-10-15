@@ -93,29 +93,29 @@ body {
     font-size: 1rem;
     margin-top: 5px;
   }
+}
 
-  button {
-    font-size: 1.4rem;
-    padding: 10px;
-    padding-bottom: 13px;
-    width: 100%;
-    background-color: var(--dark-red);
-    color: var(--black);
-    color: white;
+button {
+  font-size: 1.4rem;
+  padding: 10px;
+  padding-bottom: 13px;
+  width: 100%;
+  background-color: var(--dark-red);
+  color: var(--black);
+  color: white;
 
-    border: none;
-    border-radius: 6px;
+  border: none;
+  border-radius: 6px;
 
-    font-weight: 500;
-    margin: 20px 0px;
+  font-weight: 500;
+  margin: 20px 0px;
 
-    &:hover {
-      background-color: var(--light-red);
-    }
+  &:hover {
+    background-color: var(--light-red);
+  }
 
-    &:disabled {
-      background-color: rgb(117, 117, 117);
-    }
+  &:disabled {
+    background-color: rgb(117, 117, 117);
   }
 }
 

@@ -32,7 +32,7 @@ export const authInterceptor: HttpInterceptorFn = (request, next) => {
 
   return next(clone).pipe(
     catchError((err: HttpErrorResponse) => {
-      console.log('this is the err', err);
+      console.log(err);
 
       if (err.status === 403) {
         //Here we try to refresh acess token

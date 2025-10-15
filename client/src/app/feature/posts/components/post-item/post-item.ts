@@ -23,7 +23,6 @@ export class PostItem {
   });
 
   postLikeStatus = computed(() => {
-    console.log('the computd has run because post has changed');
     const isPostLiked = this.post().likes.some((userId) => userId === this.currentUser()._id);
     const isPostDisliked = this.post().dislikes.some((userId) => userId === this.currentUser()._id);
 

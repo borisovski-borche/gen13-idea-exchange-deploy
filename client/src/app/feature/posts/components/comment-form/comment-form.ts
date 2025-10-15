@@ -21,8 +21,6 @@ export class CommentForm {
   onFormSubmit() {
     if (this.commentForm.invalid) return;
 
-    console.log('comment submitted');
-
     this.submitOutput.emit(this.commentForm.value.body);
 
     this.commentForm.reset();

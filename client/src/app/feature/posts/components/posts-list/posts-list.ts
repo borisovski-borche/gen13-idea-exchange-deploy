@@ -21,7 +21,6 @@ export class PostsList implements OnInit {
   }
 
   onLikeDislike(data: LikeDislikeOutput) {
-    console.log('this is in the list parent', data);
     this.postsService.likeDislikePostInList(data);
   }
 }

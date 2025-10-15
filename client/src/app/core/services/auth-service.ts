@@ -31,12 +31,10 @@ export class AuthService {
   registerUser(req: RegisterReq) {
     this.apiService.registerUser(req).subscribe({
       next: () => {
-        console.log('this is the success callback');
         this.notificationsService.showSuccess('User registered successfully!');
         this.router.navigate(['login']);
       },
       error: (err) => {
-        console.log('this is the error callback');
         console.log(err);
         this.notificationsService.showError(err.error?.message);
       },

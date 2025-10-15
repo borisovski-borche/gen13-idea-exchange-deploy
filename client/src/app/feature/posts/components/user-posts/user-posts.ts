@@ -1,4 +1,4 @@
-import { Component, effect, inject, OnInit } from '@angular/core';
+import { Component, effect, ElementRef, inject, OnInit, viewChild } from '@angular/core';
 import { PostsService } from '../../../../core/services/posts-service';
 import { AuthService } from '../../../../core/services/auth-service';
 import { PostItem } from '../post-item/post-item';
@@ -19,14 +19,18 @@ export class UserPosts implements OnInit {
 
   userPosts = this.postsService.userPosts;
 
+  deleteDialog = viewChild<ElementRef<HTMLDialogElement>>('deleteDialog');
+
+  deletePostId: string = '';
+
   ngOnInit(): void {
     this.postsService.getUserPosts();
   }
 
   onPostAction(value: PostActionOutput) {
     if (value.action === 'delete') {
-      //Call delete endpoint
-      this.postsService.deletePost(value.post._id);
+      this.deletePostId = value.post._id;
+      this.deleteDialog().nativeElement.showModal();
     }
 
     if (value.action === 'edit') {
@@ -37,5 +41,16 @@ export class UserPosts implements OnInit {
         },
       });
     }
+  }
+
+  onModalClose() {
+    this.deleteDialog().nativeElement.close();
+  }
+
+  onConfirmDeleteClick() {
+    //Call delete endpoint
+    this.postsService.deletePost(this.deletePostId);
+    this.deleteDialog().nativeElement.close();
+    this.deletePostId = '';
   }
 }

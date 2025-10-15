@@ -1,0 +1,55 @@
+.user-posts {
+  .dialog-wrapper {
+    border: none;
+    margin: 0 auto;
+    top: 200px;
+    text-align: center;
+    height: 300px;
+    max-width: 500px;
+    background-color: var(--black-two);
+    box-shadow: var(--box-shadow);
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .delete-dialog {
+      display: flex;
+      flex-direction: column;
+      //   align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 30px;
+
+      .dialog-content {
+        display: grid;
+        grid-template-columns: 60%;
+        justify-content: center;
+
+        h3 {
+          font-size: 2rem;
+        }
+      }
+
+      .dialog-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        padding-bottom: 10px;
+
+        button {
+          max-width: 100px;
+          margin: 0;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.759);
+    }
+  }
+}
