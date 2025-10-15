@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "4bbdfc2b-8636-48f9-ac03-d530f9bb90a0",
+		"name": "Comments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33333089",
+		"_collection_link": "https://cloudy-meteor-558329.postman.co/workspace/gen-13-idea-exchange~41834b54-eb0e-4aaa-9b28-e1c316c5e764/collection/15639951-4bbdfc2b-8636-48f9-ac03-d530f9bb90a0?action=share&source=collection_link&creator=33333089"
+	},
+	"item": [
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": \"68d588011f335f1c67a90043\",\r\n    \"body\": \"Second comment on first post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments By User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/comments/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQ2YmFkYWViOTM3ZGNlZWMwZWRiYjQiLCJpYXQiOjE3NjAxMTUxOTMsImV4cCI6MTc2MDExNTc5M30.am1yEdFzzNbRAj7PAwPzFBcMAP9QYlzOGxVUr_Gz-4Y",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

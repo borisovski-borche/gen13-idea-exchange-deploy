@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "615ae6e1-c6d1-4e45-bc43-af58ff657f68",
+		"name": "Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33333089",
+		"_collection_link": "https://cloudy-meteor-558329.postman.co/workspace/gen-13-idea-exchange~41834b54-eb0e-4aaa-9b28-e1c316c5e764/collection/15639951-615ae6e1-c6d1-4e45-bc43-af58ff657f68?action=share&source=collection_link&creator=33333089"
+	},
+	"item": [
+		{
+			"name": "Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68d588011f335f1c67a90043"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts By User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Testing postman post\",\r\n    \"body\": \"Lorem ispum dolor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/posts/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"UPDATED UPDATED UPDATED AND AGAIN UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/posts/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68d57492df5586f7d401ab51"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68d579c279a098f305a332f6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like Post",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/:id/like",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						":id",
+						"like"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68e9312776199db3dde4fd9b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dislike Post",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/:id/dislike",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						":id",
+						"dislike"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68e930ee76199db3dde4fd87"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQ2YmFkYWViOTM3ZGNlZWMwZWRiYjQiLCJpYXQiOjE3NjAxMTU4MjgsImV4cCI6MTc2MDExNjQyOH0.1kvGGKZBgskchMZ-SdEgwPtZwXDDqHTFcLlaZmQ99Ko",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
